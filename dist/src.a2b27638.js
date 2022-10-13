@@ -3458,7 +3458,7 @@ function initializeCode() {
                 labels: labels,
                 datasets: areas
               };
-              chart = new frappe.Chart("#chart", {
+              chart = new _frappeChartsMin.Chart("#chart", {
                 title: "Population growth in Finland",
                 data: chartData,
                 type: "line",
