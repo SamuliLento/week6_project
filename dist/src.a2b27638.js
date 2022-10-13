@@ -207,11 +207,9 @@ function initializeCode() {
               return getData();
             case 2:
               data = _context2.sent;
-              console.log(data);
               areas = Object.values(data.dimension.Alue.category.label);
               labels = Object.values(data.dimension.Vuosi.category.label);
               values = data.value;
-              console.log(values);
               areas.forEach(function (alue, index) {
                 areas[index] = {
                   name: alue,
@@ -229,7 +227,7 @@ function initializeCode() {
                 height: 450,
                 colors: ["#eb5146"]
               });
-            case 11:
+            case 9:
             case "end":
               return _context2.stop();
           }

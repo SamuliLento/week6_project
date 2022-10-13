@@ -80,12 +80,10 @@ function initializeCode() {
 
   const buildChart = async () => {
     const data = await getData();
-    console.log(data);
 
     const areas = Object.values(data.dimension.Alue.category.label);
     const labels = Object.values(data.dimension.Vuosi.category.label);
     const values = data.value;
-    console.log(values);
 
     areas.forEach((alue, index) => {
       areas[index] = {
