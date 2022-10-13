@@ -198,7 +198,7 @@ function initializeCode() {
   }();
   var buildChart = /*#__PURE__*/function () {
     var _ref2 = _asyncToGenerator( /*#__PURE__*/_regeneratorRuntime().mark(function _callee2() {
-      var data, values, population, chartData, chart;
+      var data, areas, labels, values, chartData, chart;
       return _regeneratorRuntime().wrap(function _callee2$(_context2) {
         while (1) {
           switch (_context2.prev = _context2.next) {
@@ -207,16 +207,18 @@ function initializeCode() {
               return getData();
             case 2:
               data = _context2.sent;
-              console.log(data);
+              areas = Object.values(data.dimension.Alue.category.label);
+              labels = Object.values(data.dimension.Vuosi.category.label);
               values = data.value;
-              console.log(values);
-              population = {
-                name: "Population",
-                values: values
-              };
+              areas.forEach(function (alue, index) {
+                areas[index] = {
+                  name: alue,
+                  values: values
+                };
+              });
               chartData = {
-                labels: ["2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"],
-                datasets: population
+                labels: labels,
+                datasets: areas
               };
               chart = new frappe.Chart("#chart", {
                 title: "Population growth in Finland",
